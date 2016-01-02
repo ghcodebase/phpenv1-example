@@ -7,6 +7,13 @@ $database = new medoo([
 'database_file' => '../storage/database.db'
 ]);
 
+$comment = new SitePoint\Comment($database);
+$comment->setEmail('bruno@skvorc.me')
+  ->setName('Bruno Skvorc')
+//  ->setComment('It works!')  This line in the book creates an error, as it is too short for the requirement set on line 55 of Comment.php.  It is also overwritten by the following comment.
+  ->setComment('Hooray! Saving comments works!')
+  ->save();
+
 // Viewing the output from the database
 // dump($database);
 
